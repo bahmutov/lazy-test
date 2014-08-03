@@ -2,6 +2,7 @@
   'use strict';
   var queue = [];
   var testScheduled = false;
+  var betweenTests = 0; // ms
 
   var started = +(new Date());
   function log() {
@@ -27,7 +28,9 @@
 
   function scheduleTest(delay) {
     if (!arguments.length) {
-      delay = 0;
+      delay = betweenTests;
+    } else {
+      betweenTests = delay;
     }
     if (root.lazyTest.options.debug) {
       log('scheduling test', testScheduled, 'delay', delay);
@@ -40,7 +43,7 @@
       schedule(function () {
         var firstTest = queue.shift();
         firstTest.fn();
-      }, delay);
+      }, betweenTests);
       testScheduled = true;
     }
   }

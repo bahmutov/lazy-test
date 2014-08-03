@@ -65,7 +65,7 @@
         }
         root.lazyTest.options.reporters.fail(err, msg);
       }
-      root.lazyTest.start();
+      scheduleTest();
     };
     var aTest = {
       name: name
@@ -77,7 +77,17 @@
 
   root.lt = root.lazyTest = {
     it: it,
-    start: scheduleTest,
+    start: function (initialDelay, testDelay) {
+      if (!arguments.length) {
+        return scheduleTest(betweenTests);
+      }
+      if (arguments.length === 1) {
+        return scheduleTest(initialDelay);
+      }
+      setTimeout(function () {
+        return scheduleTest(testDelay);
+      }, initialDelay);
+    },
     options: {
       vebose: false,
       debug: false,

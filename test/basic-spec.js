@@ -22,7 +22,7 @@ lazyTest.it('test 2 works fine', function () {
 
 console.log('sync action 2');
 
-lazyTest.start();
+lazyTest.start(100);
 // multiple starts should do nothing
 lazyTest.start();
 lazyTest.start();

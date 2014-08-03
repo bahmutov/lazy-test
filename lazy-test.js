@@ -13,6 +13,10 @@
     }
   }
 
+  function logException(err, msg) {
+    log(msg);
+  }
+
   // defer given function - just add it to the event queue
   function schedule(fn, delay) {
     if (arguments.length === 1) {
@@ -50,14 +54,13 @@
       testScheduled = false;
       try {
         fn();
-        if (root.lazyTest.options.verbose) {
-          log('test "' + this.name + '" passed');
-        }
+        root.lazyTest.options.reporters.pass('test "' + this.name + '" passed');
       } catch (err) {
-        if (root.lazyTest.options.verbose) {
-          log('test "' + this.name + '" failed');
-          log(err.message);
+        var msg = 'test "' + this.name + '" failed\n' + err.message;
+        if (err.stack) {
+          msg += '\n' + err.stack;
         }
+        root.lazyTest.options.reporters.fail(err, msg);
       }
       root.lazyTest.start();
     };
@@ -74,7 +77,11 @@
     start: scheduleTest,
     options: {
       vebose: false,
-      debug: false
+      debug: false,
+      reporters: {
+        fail: logException,
+        pass: log
+      }
     }
   };
 

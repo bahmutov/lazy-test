@@ -1,6 +1,8 @@
-require('../lazy-test');
-require('lazy-ass');
-var check = require('check-types');
+if (typeof require === 'function') {
+  require('../lazy-test');
+  require('lazy-ass');
+  var check = require('check-types');
+}
 
 lazyAss(check.object(lazyTest), 'missing lazyTest');
 lazyAss(check.object(lt), 'missing lt');

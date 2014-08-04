@@ -19,6 +19,8 @@
     log(msg);
   }
 
+  function noop() {}
+
   // defer given function - just add it to the event queue
   function schedule(fn, delay) {
     if (arguments.length === 1) {
@@ -88,6 +90,10 @@
       setTimeout(function () {
         return scheduleTest(testDelay);
       }, initialDelay);
+    },
+    disable: function () {
+      log('disabling lazy-test');
+      this.it = this.start = noop;
     },
     options: {
       vebose: false,

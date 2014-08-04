@@ -126,6 +126,11 @@ No problem, just include `lazy-test-bdd.js` after `lazy-test.js` when testing.
 It will remove the default `lazyTest` object and will just reference the
 `it` functions, thus your Jasmine or Mocha will run the unit tests
 
+## Disable in production
+
+If you decide that you do not want to actually run the unit tests in production,
+you can call `lazyTest.disable()` which will replace `lazyTest.it` and `lazyTest.start`
+with no ops.
 
 ### Small print
 

@@ -1,7 +1,7 @@
 {
   "name": "lazy-test",
   "main": "lazy-test.js",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "homepage": "https://github.com/bahmutov/lazy-test",
   "description": "Async lazy one by one unit testing for interleaving production and test code",
   "keywords": [
@@ -19,7 +19,8 @@
     "bower_components",
     "test",
     "tests",
-    "Gruntfile.js"
+    "Gruntfile.js",
+    "package.json"
   ],
   "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>"
 }

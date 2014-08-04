@@ -119,6 +119,14 @@ code. It is up to you to make sure each individual unit test is short.
 
 **lazyTest** (alias `lt`) - the unit testing framework.
 
+## Redirect to BDD
+
+What if you want to run the lazy tests with your default BDD tester?
+No problem, just include `lazy-test-bdd.js` after `lazy-test.js` when testing.
+It will remove the default `lazyTest` object and will just reference the
+`it` functions, thus your Jasmine or Mocha will run the unit tests
+
+
 ### Small print
 
 Author: Gleb Bahmutov &copy; 2014

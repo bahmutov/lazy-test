@@ -117,7 +117,25 @@ code. It is up to you to make sure each individual unit test is short.
 
 ## API
 
-**lazyTest** (alias `lt`) - the unit testing framework.
+**lazyTest** (alias `lt`) - the unit testing framework itself.
+It has the following structure.
+
+    lazyTest = {
+      it: function (name, callback),
+      start: function (initialDelay, testDelay),
+      disable: function (),
+      options: {
+        vebose: false,
+        debug: false,
+        reporters: {
+          fail: function (error, msg)
+          pass: function (msg)
+        }
+      }
+    };
+
+The API is kept very simple (no suites, no beforeEach/afterEach) to keep the production
+tests an intermediate step - you really should quickly move unit tests into separate specs.
 
 ## Redirect to BDD
 

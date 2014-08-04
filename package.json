@@ -32,7 +32,7 @@
   ],
   "license": "MIT",
   "main": "lazy-test.js",
-  "pre-commit": "npm test",
+  "pre-commit": ["grunt", "npm test"],
   "repository": {
     "type": "git",
     "url": "git@github.com:bahmutov/lazy-test.git"

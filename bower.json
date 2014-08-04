@@ -1,7 +1,7 @@
 {
   "name": "lazy-test",
   "main": "lazy-test.js",
-  "version": "0.1.1",
+  "version": "0.5.1",
   "homepage": "https://github.com/bahmutov/lazy-test",
   "description": "Async lazy one by one unit testing for interleaving production and test code",
   "keywords": [

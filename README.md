@@ -111,6 +111,10 @@ Each test will run after at least `betweenTestsMs` after previous test has finis
 Because the tests are scheduled one by one, the testing code will interleave with the production
 code. It is up to you to make sure each individual unit test is short.
 
+## API
+
+**lazyTest** (alias `lt`) - the unit testing framework.
+
 ### Small print
 
 Author: Gleb Bahmutov &copy; 2014

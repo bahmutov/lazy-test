@@ -4,6 +4,8 @@ if (typeof require === 'function') {
   var check = require('check-types');
 }
 
+/* global lazyTest, lt */
+
 lazyAss(check.object(lazyTest), 'missing lazyTest');
 lazyAss(check.object(lt), 'missing lt');
 

@@ -1,9 +1,9 @@
 if (typeof require === 'function') {
   require('../lazy-test');
   require('lazy-ass');
-  var check = require('check-types');
 }
 
+/* global lazyTest */
 var add = (function () {
   function isNumber(x) {
     return typeof x === 'number';
@@ -20,9 +20,9 @@ var add = (function () {
   });
 
   return function add(a, b) {
-    if (isNumber(a) &&
-      isNumber(b))
+    if (isNumber(a) && isNumber(b)) {
       return a + b;
+    }
     return 'arguments should be numbers';
   };
 }());

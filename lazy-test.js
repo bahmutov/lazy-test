@@ -1,3 +1,4 @@
+/* global window, global */
 (function (root) {
   'use strict';
   var queue = [];
@@ -97,6 +98,5 @@
       }
     }
   };
-
 
 }(typeof window === 'object' ? window : global));

@@ -2,6 +2,10 @@
 
 > Async one by one unit testing for interleaving production and test code
 
+[![Build status][lazy-test-ci-image] ][lazy-test-ci-url]
+[![dependencies][lazy-test-dependencies-image] ][lazy-test-dependencies-url]
+[![devdependencies][lazy-test-devdependencies-image] ][lazy-test-devdependencies-url]
+
 Properly written JavaScript is hard to test because most of the code
 is hidden inside closures. For example, we cannot directly test
 the inner function `isNumber` in this example:
@@ -154,3 +158,12 @@ HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
 WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
+
+[lazy-test-icon]: https://nodei.co/npm/lazy-test.png?downloads=true
+[lazy-test-url]: https://npmjs.org/package/lazy-test
+[lazy-test-ci-image]: https://travis-ci.org/bahmutov/lazy-test.png?branch=master
+[lazy-test-ci-url]: https://travis-ci.org/bahmutov/lazy-test
+[lazy-test-dependencies-image]: https://david-dm.org/bahmutov/lazy-test.png
+[lazy-test-dependencies-url]: https://david-dm.org/bahmutov/lazy-test
+[lazy-test-devdependencies-image]: https://david-dm.org/bahmutov/lazy-test/dev-status.png
+[lazy-test-devdependencies-url]: https://david-dm.org/bahmutov/lazy-test#info=devDependencies
